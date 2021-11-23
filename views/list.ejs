@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="navdiv"><a href="/"  id="Item" onclick="navLinkShadow">Item List</a></div>
+        <div class="navdiv"><a href="/work" id="work" onclick="navLinkShadow">Work List</a></div>
+    </nav>
+
+        <h1 style="color: purple;">
+            <%=listTitle%>
+        </h1>
+
+    <div class="box">
+        <% newListItems.forEach((element)=>{ %>
+            <form action="/delete" method="POST">
+            <input class="checkbox" type="checkbox"  onchange="this.form.submit()" name=<%=listTitle%> value="<%=element._id%>"><p><%=element.itemName%></p><br>
+            </form>
+        <%})%>
+    </div>
+    <form action="/" method="POST">
+        <input class="text" type="text" placeholder="Add to list" name="newEntry" autocomplete="off">
+        <br>
+        <button type="submit" name="itemBtn" value="<%=listTitle%>">+</button>
+    </form>
+</body>
+
+</html>
