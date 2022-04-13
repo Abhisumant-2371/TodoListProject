@@ -9,9 +9,9 @@ const bodyParser = require("body-parser");
 const { resolveInclude } = require("ejs");
 const _=require("lodash")
 const app = express();
-
+// mongodb+srv://Abhisumant1234:<password>@cluster0.okn1l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 // creaiting a new database
-mongoose.connect("mongodb+srv://Abhisumant-2371:Test-123%40cluster0.le4mp.mongodb.net/todolistDB?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://Abhisumant1234:mytodolist1234@cluster0.okn1l.mongodb.net/todolistDB?retryWrites=true&w=majority");
 
 const itemsSchema=new mongoose.Schema({
     itemName:String
