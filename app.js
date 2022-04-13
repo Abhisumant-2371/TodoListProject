@@ -11,7 +11,7 @@ const _=require("lodash")
 const app = express();
 
 // creaiting a new database
-mongoose.connect("mongodb+srv://Abhisumant-2371:Test-123@cluster0.le4mp.mongodb.net/todolistDB?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://Abhisumant-2371:Test-123%40cluster0.le4mp.mongodb.net/todolistDB?retryWrites=true&w=majority");
 
 const itemsSchema=new mongoose.Schema({
     itemName:String
